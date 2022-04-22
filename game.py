@@ -1,6 +1,5 @@
 import time
 
-
 class GameTimer(object):
     """
     This class starts with the game, in order to countdown how many
@@ -18,8 +17,4 @@ class GameTimer(object):
 
         print("'End Game!")
 
-
-temporizador = GameTimer()
-
-temporizador.countdown(10)
 
