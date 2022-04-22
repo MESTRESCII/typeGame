@@ -6,15 +6,18 @@ dicionarioDeFrases = dict(
 
 
 class GeradorDeFrases(object):
-    index = 0
+    index = 1
 
     def __init__(self, index:int) -> None:
-        index = self.index
+        self.index = index
         pass
         
     def gerarFrase(self, index: int) -> str:
         self.index = index
         return dicionarioDeFrases[index]
+
+    def gerarFrase(self) -> str:
+        return dicionarioDeFrases[self.index]
 
     def pegarFrase(self) -> str:
         return dicionarioDeFrases[self.index]
@@ -22,11 +25,8 @@ class GeradorDeFrases(object):
     def retornarCharDoIndex(self, index:int) -> char:
         return dicionarioDeFrases[self.index][index]
 
-        
-
-
 gerador = GeradorDeFrases(1)
-minhaResposta = print("Escreva a seguinte frase: {} ".format(gerador.gerarFrase(1)))
+minhaResposta = print("Escreva a seguinte frase: {} ".format(gerador.gerarFrase()))
 
 indexDeChar = 0
 
@@ -34,9 +34,8 @@ while(indexDeChar < len(gerador.pegarFrase())):
     c = clk.getchar()   # Gets a single character
 
     if c == gerador.retornarCharDoIndex(indexDeChar):
-        indexDeChar+=1
+        indexDeChar += 1
         print(c)
     else: #errou
+        print('"{}" não é o char correto!'.format(c))
         break
-
-
