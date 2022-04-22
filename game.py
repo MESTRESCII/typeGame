@@ -4,7 +4,7 @@ import time
 class GameTimer(object):
     """
     This class starts with the game, in order to countdown how many
-    senteces can you type
+    sentences can you type before the time is over
     """
     def countdown(self, setTime:int):
         self.setTime = setTime
